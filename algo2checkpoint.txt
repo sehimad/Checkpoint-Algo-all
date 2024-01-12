@@ -1,0 +1,36 @@
+Algorithme ProduitScalaireEtOrthogonal
+Fonction dot_product(v1: tableau d'entiers, v2: tableau d'entiers) : entier
+Variables :
+   produitScalaire: entier
+Début
+   produitScalaire ← 0
+
+   // Calcul du produit scalaire
+   Pour i de 1 à longueur de v1 Faire
+      produitScalaire ← produitScalaire + (v1[i] * v2[i])
+   Fin Pour
+
+   Retourner produitScalaire
+Fin Fonction
+
+Algorithme DetecterOrthogonalite
+Variables :
+   n: entier (nombre de paires de vecteurs)
+   v1, v2: tableau d'entiers
+   i: entier
+
+Début
+   // Lire le nombre de paires de vecteurs
+   Lire n
+
+   Pour i de 1 à n Faire
+      // Lire les vecteurs v1 et v2
+      Lire v1, v2
+
+      Si (dot_product(v1, v2) = 0) Alors
+         Afficher "Les vecteurs sont orthogonaux"
+      Sinon
+         Afficher "Les vecteurs ne sont pas orthogonaux"
+      Fin Si
+   Fin Pour
+Fin

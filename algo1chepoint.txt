@@ -1,0 +1,26 @@
+Algorithme SommeElementsDistincts
+Variables :
+   ensemble1: tableau d'entiers
+   ensemble2: tableau d'entiers
+   somme: entier
+
+Début
+   somme ← 0
+
+   // Ajouter les éléments distincts de l'ensemble1 à la somme
+   Pour chaque élément dans ensemble1 Faire
+      Si (element n'est pas présent dans ensemble2) Alors
+         somme ← somme + élément
+      Fin Si
+   Fin Pour
+
+   // Ajouter les éléments distincts de l'ensemble2 à la somme
+   Pour chaque élément dans ensemble2 Faire
+      Si (element n'est pas présent dans ensemble1) Alors
+         somme ← somme + élément
+      Fin Si
+   Fin Pour
+
+   // Afficher la somme des éléments distincts
+   Afficher somme
+Fin

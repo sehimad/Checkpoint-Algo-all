@@ -1,0 +1,38 @@
+ALGORITHM IsPalindrome(word)
+/*
+    Checks if a word is a palindrome.
+    Returns true if it is a palindrome, false otherwise.
+*/
+
+    // Function to check if a character is a letter
+    FUNCTION IsLetter(char)
+        RETURN (char is a letter)
+
+    // Function to convert a character to lowercase
+    FUNCTION ToLower(char)
+        RETURN lowercase version of char
+
+    // Function to compare characters, ignoring case
+    FUNCTION AreEqualIgnoreCase(char1, char2)
+        RETURN (ToLower(char1) = ToLower(char2))
+
+    // Function to check if a word is a palindrome
+    FUNCTION IsPalindromeHelper(startIndex, endIndex)
+        IF startIndex >= endIndex THEN
+            // Empty word or a word with a single character is a palindrome
+            RETURN true
+        ELSE IF AreEqualIgnoreCase(word[startIndex], word[endIndex]) THEN
+            // Characters at the ends are equal, continue checking the rest
+            RETURN IsPalindromeHelper(startIndex + 1, endIndex - 1)
+        ELSE
+            // Characters at the ends are different, not a palindrome
+            RETURN false
+        END IF
+
+    // Main function to check if the word is a palindrome
+    RETURN IsPalindromeHelper(1, length of word)
+
+// Example usage
+wordToCheck = "gag"
+result = IsPalindrome(wordToCheck)
+OUTPUT result

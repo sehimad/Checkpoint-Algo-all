@@ -1,0 +1,19 @@
+Algorithm InsertionSort
+Input: An array arr with n elements
+Output: The array arr sorted in ascending order
+
+Begin
+    For i from 1 to n-1 do
+        key ← arr[i]
+        j ← i - 1
+
+        // Move elements of arr[0..i-1] that are greater than key
+        // to one position ahead of their current position
+        While j >= 0 and arr[j] > key do
+            arr[j + 1] ← arr[j]
+            j ← j - 1
+        End While
+
+        arr[j + 1] ← key
+    End For
+End
